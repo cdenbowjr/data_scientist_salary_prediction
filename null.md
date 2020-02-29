@@ -1,4 +1,4 @@
-# Predicting High Salaries for Data related Jobs in the US, UK, Canada & Australia
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 4: Web Scraping Job Postings
 
 ## Business Case Overview
 
@@ -69,6 +69,7 @@ Your boss would rather tell a client incorrectly that they would get a lower sal
 ### BONUS
 
 Convert your executive summary into a public blog post of at least 500 words, in which you document your approach in a tutorial for other aspiring data scientists. Link to this in your notebook.
+
 
 ---
 
