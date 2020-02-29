@@ -1,24 +1,27 @@
 # Predicting High Salaries for Data-related Jobs in the US, UK, Canada & Australia
 
+![Salary](/images/salary.png)
+
 ## Business Case Overview
 
 The following model could be used for the following reasons:
 
-1. For a firm looking to offer technology and scientific solutions for any business (B2B) looking to to be competitive in the hiring market.
+1. For a firm looking to offer technology and scientific solutions for any business (B2B) looking to to be competitive in the hiring market for data-related jobs.
 2. For a firm looking to understand the data industry factors that are most important in predicting the various salary amounts.
 
 
 
-### Definitions
+#### Definitions
 
-data-related job postings - data scientist, data analyst, research scientist, business intelligence
+> **Data-related job postings** - data scientist, data analyst, research scientist, business intelligence
 
 ---
 
 #### Background
+
 DataRecruit Intl., British recruiters for ``elite Data Professionals in industry`` has approached **GA technology solutions** to build a model to predict accurately whether jobs posted online are high or low relative to the median global salary for Data related jobs. They have made a baseline requirement that what ever **the model predicts should be 90% precise when determining high salary jobs** as this is what is important to their clients and their own reputation.
 
-
+____
 
 #### Approach
 **GA technology solutions** has taken the approach to web scrape known Data Science job postings with salary information from 4 major countries where Data Scientists operate from Indeed.com. Over 3,000 jobs were identified and care was taken to convert the salary information for the respective currency exchange rates to the firms local currency (£). The raw data captured was:
@@ -28,6 +31,10 @@ DataRecruit Intl., British recruiters for ``elite Data Professionals in industry
 - Job Region (e.g NorthEast USA, South Australia, Alberta)
 - Country where the job was posted (e.g USA, UK, Canada, Australia)
 - The full job description and summary
+
+____
+
+#### Exploratory Data Analysis
 
 The exploratory data analysis indicate that job levels (Senior and Mid) and job category (Data Scientist and Data Analyst) maybe good features for segregating high salary jobs from low because of the differences in the median of their histograms below:
 
@@ -44,9 +51,9 @@ This combined matrix of numeric vectors representing words and variables was the
 
 The 3000+ job postings information was then split into two parts: 1) 80% of the data was split to train or fit the models 2) the remaining 20% was used to test the model on unseen data.
 
+____
 
-
-##### Tuning of Models
+#### Model Optimization
 Using the a trial and error procedure in the form of a process called GridSearch, we attempted to tune both models hyperparameters to improve their accuracy. These hyperparameters were adjusted to ultimately search for the combination of components that would deliver the highest cross validated accuracy on the training data.
 
 The tuned logistic regression model improved its accuracy to 84.1% and the decision tree  model improved its accuracy to 75%. This indicated that not much optimization/regularization was needed from initial model hyperparameters.
@@ -72,7 +79,7 @@ From the logistic regression model the following factors were seen to increase t
 From the Decision tree model the following were important features of the job ad for determining high salary jobs:
 
 A job ad that....
-1. **EITHER** mentioned the word ``5 years`` often in its job description but the posting didn't originate from the ``United Kingdom`` and didnt mention the word ``machine`` much in its job description.<br>
+1. **EITHER** mentioned the word ``5 years`` often in its job description but the posting didn't originate from the ``United Kingdom`` and didn't mention the word ``machine`` much in its job description.<br>
 
 2. **OR** mentioned the word ``machine`` often in its job description but didn't mentioned the words ``uk`` and ``life`` much.
 
@@ -84,7 +91,9 @@ A job ad that....
 
 <table><tr><td><img src='./images/decision_tree.png'><figcaption><b>Figure 3</b></figcaption></td></tr></table><br>
 
-##### Model Precision
+____
+
+#### Model Evaluation
 
 The models precision scores for predicting high salary jobs were 82% and 75% precision for the Logistic Regression model Decision Tree Model respectively. **This fell below the 90% precision requirement specified by the client.**
 
@@ -96,11 +105,12 @@ Looking at the Receiver Operating Curve (ROC) and the Precision Recall Curve for
 
 The 90% precision requirement translates to minimizing the False Positive rate to no more than 0.1 (10 wrongly predicted high salary jobs in every 100 truly low salary jobs) and boosting the true positive rate or recall.
 
-
-
 <table><tr><td><img src='./images/ROC.png'><figcaption><b>Figure 4a</b></figcaption></td><td><img src='./images/Precision-Recall.png'><figcaption><b>Figure 4b</b></figcaption></td></tr></table><br>
 
+____
+
 #### Risks and Limitations
+
 There were several risks and limitations of the approach taken which are listed below:
 
 ##### The Data
