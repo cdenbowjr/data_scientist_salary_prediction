@@ -2,6 +2,10 @@
 
 ![Salary](/images/salary.png)
 
+[Link to web scraping & API notebook](project-04-charles-denbow-part-1.ipynb)
+
+[Link to data analysis and modelling notebook](project-04-charles-denbow-part-2.ipynb)
+
 ## Business Case Overview
 
 The following model could be used for the following reasons:
